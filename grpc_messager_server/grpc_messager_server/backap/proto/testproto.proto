@@ -1,0 +1,15 @@
+syntax = "proto3";
+package testproto;
+
+service Nuzhniitest {
+    rpc Superfunc (NuzhniiRequest) returns (NuzhniiResponse);
+}
+
+message NuzhniiRequest {
+    string message = 1;
+    string number   = 2;
+}
+
+message NuzhniiResponse {
+    string message = 1;
+}

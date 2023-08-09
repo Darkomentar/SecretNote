@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2A7EFF7A"
+    android:orientation="vertical"
+    android:forceDarkAllowed="false"
+    tools:context=".ImportExportPrivateKey">
+
+    <FrameLayout
+        android:id="@+id/fl"
+        android:layout_width="match_parent"
+        android:layout_margin="25dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/pk"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:hint="Private Key"
+            android:shadowColor="#03FF6C"
+            android:shadowRadius="0"
+            android:textAllCaps="false"
+            android:textColor="#273E27"
+            android:textStyle="normal"
+            android:autofillHints="" />
+
+        <ImageView
+            android:id="@+id/pki"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/borderedittext" />
+
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="12"
+        android:orientation="horizontal"
+        android:paddingBottom="20dp"
+        tools:context=".ImportExportPrivateKey">
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:backgroundTint="#304FFE"
+            android:shadowColor="#F60B0B"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="1"
+            android:text="COPY"
+            android:textColor="#BFFFFFFF"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/change_pin_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:backgroundTint="#27DA7D"
+            android:shadowColor="#FF0000"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="1"
+            android:text="SAVE"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

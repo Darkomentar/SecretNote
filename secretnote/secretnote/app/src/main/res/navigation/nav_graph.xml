@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/login">
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.secretnote.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_register1"
+            app:destination="@id/register1" />
+        <action
+            android:id="@+id/action_login_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/register32"
+        android:name="com.example.secretnote.register3"
+        android:label="fragment_register1"
+        tools:layout="@layout/fragment_register1" >
+        <action
+            android:id="@+id/action_register32_to_register4"
+            app:destination="@id/register4" />
+    </fragment>
+    <fragment
+        android:id="@+id/register1"
+        android:name="com.example.secretnote.register1"
+        android:label="fragment_register3"
+        tools:layout="@layout/fragment_register3" >
+        <action
+            android:id="@+id/action_register1_to_register2"
+            app:destination="@id/register2" />
+    </fragment>
+    <fragment
+        android:id="@+id/register2"
+        android:name="com.example.secretnote.register2"
+        android:label="fragment_register4"
+        tools:layout="@layout/fragment_register4" >
+        <action
+            android:id="@+id/action_register2_to_register32"
+            app:destination="@id/register32" />
+    </fragment>
+    <fragment
+        android:id="@+id/register4"
+        android:name="com.example.secretnote.register4"
+        android:label="fragment_register_final"
+        tools:layout="@layout/fragment_register_final" >
+        <action
+            android:id="@+id/action_register4_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.secretnote.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/sendMessage"
+        android:name="com.example.secretnote.SendMessage"
+        android:label="fragment_send_message"
+        tools:layout="@layout/fragment_send_message" />
+</navigation>

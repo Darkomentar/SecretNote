@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@android:drawable/ic_dialog_email"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@android:drawable/ic_input_add"
+            android:title="@string/new_private_chat" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/group_chat"
+            android:title="@string/menu_slideshow" />
+        <item
+            android:id="@+id/importExportPrivateKey"
+            android:icon="@drawable/key"
+            android:title="@string/import_export_private_key" />
+        <item
+            android:id="@+id/protectionAccess"
+            android:icon="@drawable/secure"
+            android:title="PROTECTION ACCESS" />
+    </group>
+</menu>

@@ -1,0 +1,397 @@
+syntax = "proto3";
+// import "google/protobuf/timestamp.proto";
+option java_multiple_files = true;
+option java_package = "com.example.secretnote";
+package testproto;
+
+
+service Nuzhniitest {
+    rpc Superfunc (NuzhniiRequest) returns (NuzhniiResponse);
+    rpc Login (LoginRequest) returns (LoginResponse);
+    rpc LoginConnect (LoginConnectRequest) returns (LoginConnectResponse);
+    rpc EmailConfirmation (EmailConfirmationRequest) returns (EmailConfirmationResponse);
+    rpc Registration (RegistrationRequest) returns (SeccessfullResponse);
+    rpc ChatList (ChatListRequest) returns (ChatListResponse);
+    rpc SendMsg (SendMsgRequest) returns (SendMsgResponse);
+    rpc GetMsg (GetMsgRequest) returns (GetMsgResponse);
+    rpc GetMsgS (GetMsgStreamRequest) returns (stream GetMsgStreamResponse);
+    rpc GetMsgSPart (GetMsgPartStreamRequest) returns (stream GetMsgPartStreamResponse);
+    rpc GetLogins (GetLoginsRequest) returns (stream GetLoginsStreamResponse);
+    rpc GetLastReaded (GetLastReadedRequest) returns (GetLastReadedResponse);
+    rpc ChatListS (ChatListSRequest) returns (stream ChatListSResponse);
+    rpc CheckNewMsg (CheckNewMsgRequest) returns (CheckNewMsgResponse);
+    rpc GetPublickKey (GetPublickKeyRequest) returns (GetPublickKeyResponse);
+    rpc CreateGroupChat (CreateGroupChatRequest) returns (CreateGroupChatResponse);
+    rpc AddGroupChat (AddGroupChatRequest) returns (AddGroupChatResponse);
+    rpc GetMsgGroupS (GetMsgGroupStreamRequest) returns (stream GetMsgGroupStreamResponse);
+    rpc GetMsgGroupSPart (GetMsgGroupPartStreamRequest) returns (stream GetMsgGroupPartStreamResponse);
+    rpc GetLastReadedGroup (GetLastReadedGroupRequest) returns (GetLastReadedGroupResponse);
+    rpc SetMsgGroupChat (SetMsgGroupChatRequest) returns (SetMsgGroupChatResponse);
+    rpc GetPuPrKeyGroupChat (GetPuPrKeyGroupChatRequest) returns (GetPuPrKeyGroupChatResponse);
+    rpc GetLoginsGroupChat (GetLoginsGroupChatRequest) returns (stream GetLoginsGroupChatStreamResponse);
+    rpc AddUserGroupChat (AddUserGroupChatRequest) returns (AddUserGroupChatResponse);
+    rpc GetUsersChat(GetUsersChatRequest) returns (stream GetUsersChatResponse);
+    rpc QuitGroupChat(QuitGroupChatRequest) returns (QuitGroupChatResponse);
+    rpc QuitChat(QuitChatRequest) returns (QuitChatResponse);
+}
+
+message  QuitChatRequest {
+    string login = 1;
+    string password = 2;
+    string login_interlocutor = 3;
+}
+
+message  QuitChatResponse {
+    int32 errorcode = 1;
+}
+
+message  QuitGroupChatRequest {
+    string login = 1;
+    string password = 2;
+    string login_chat = 3;
+}
+
+message  QuitGroupChatResponse {
+    int32 errorcode = 1;
+}
+
+
+message  GetUsersChatRequest {
+    string login = 1;
+    string password = 2;
+    string login_chat = 3;
+}
+
+message  GetUsersChatResponse {
+    int32 errorcode = 1;
+    string u_login = 2;
+    string surname = 3;
+    string name = 4;
+    string middle_name = 5;
+}
+
+message  AddUserGroupChatRequest {
+    string login = 1;
+    string password = 2;
+    string u_login= 3;
+    string login_chat = 4;
+    bytes private_key = 5;
+}
+
+message  AddUserGroupChatResponse {
+    int32 errorcode = 1;
+}
+
+message  GetLoginsGroupChatRequest {
+    string login = 1;
+    string login_chat = 2;
+}
+
+message  GetLoginsGroupChatStreamResponse {
+    int32 errorcode = 1;
+    string Login = 2;
+}
+
+
+message  GetPuPrKeyGroupChatRequest {
+    string Login = 1;
+    string Password   = 2;
+    string LoginChat = 3;
+}
+
+message  GetPuPrKeyGroupChatResponse {
+    int32 errorcode = 1;
+    string publickey = 2;
+    bytes privatekey = 3;
+}
+
+
+
+message  SetMsgGroupChatRequest {
+    string Login = 1;
+    string Password   = 2;
+    string RecipientLogin = 3;
+    bytes Msg = 4;
+    string Typemsg = 6;
+}
+
+message  SetMsgGroupChatResponse {
+    int32 errorcode = 1;
+}
+message  GetLastReadedGroupRequest {
+    string Login = 1;
+    string Password = 2;
+    string RecipientLogin = 3;
+}
+
+message  GetLastReadedGroupResponse {
+    int64 idmsgLastReaded = 1;
+}
+
+
+
+message  GetMsgGroupPartStreamRequest {
+    string Login = 1;
+    string Password = 2;
+    string RecipientLogin = 3;
+    int64 idmsgLast = 4;
+}
+
+message  GetMsgGroupPartStreamResponse {
+    int32 errorcode = 1;
+    bytes GeterMsg = 2;
+    string types = 3;
+    string datatime = 4;
+    bool mymessage = 5;
+    int64 idmsg = 6;
+    bool readed = 7;
+    string autor = 8;
+}
+
+
+message  GetMsgGroupStreamRequest {
+    string Login = 1;
+    string Password = 2;
+    string RecipientLogin = 3;
+}
+
+message  GetMsgGroupStreamResponse {
+    int32 errorcode = 1;
+    bytes GeterMsg = 2;
+    string types = 3;
+    string datatime = 4;
+    bool mymessage = 5;
+    int64 idmsg = 6;
+    bool readed = 7;
+    string autor = 8;
+}
+
+
+
+
+message  AddGroupChatRequest {
+    string Login= 1;
+    string Password = 2;
+    string LoginChat = 3;
+    bytes PrivateKey = 4;
+    string LoginAddUser = 5;
+}
+
+message  AddGroupChatResponse {
+    int32 errorcode = 1;
+}
+
+
+message  CreateGroupChatRequest {
+    string Login = 1;
+    string Password = 2;
+    string NameChat=3;
+    string LoginChat = 4;
+    string PublicKey = 5;
+    bytes PrivateKey = 6;
+    bytes First_msg = 7;
+}
+
+message  CreateGroupChatResponse {
+    int32 errorcode = 1;
+}
+
+
+message  GetPublickKeyRequest {
+    string Login = 1;
+}
+
+message  GetPublickKeyResponse {
+    string errorcodeOrPublickKey = 1;
+}
+
+
+message  CheckNewMsgRequest {
+    string Login = 1;
+    string Password = 2;
+    int64 idlastmsg = 3;
+    int64 idlastmsggroup = 4;
+}
+
+message  CheckNewMsgResponse {
+    int64 errorcodeOridlastmsg = 1;
+}
+
+
+
+
+
+
+
+
+
+message  ChatListSRequest {
+    string Login = 1;
+    string Password = 2;
+}
+
+message  ChatListSResponse {
+    int32 errorcode = 1;
+    string Login = 2;
+    string Lastname =3;
+    string Firstname =4;
+    string Middlename =5;
+    bytes photo=6;
+    int32 countmsg=7;
+    int64 lastidmsg = 8;
+    bool group_chat = 9;
+}
+
+
+
+message  GetLastReadedRequest {
+    string Login = 1;
+    string Password = 2;
+    string RecipientLogin = 3;
+}
+
+message  GetLastReadedResponse {
+    int64 idmsgLastReaded = 1;
+}
+
+
+
+message  GetLoginsRequest {
+    string Login = 1;
+}
+
+message  GetLoginsStreamResponse {
+    int32 errorcode = 1;
+    string Login = 2;
+}
+
+message  GetMsgPartStreamRequest {
+    string Login = 1;
+    string Password = 2;
+    string RecipientLogin = 3;
+    int64 idmsgLast = 4;
+}
+
+message  GetMsgPartStreamResponse {
+    int32 errorcode = 1;
+    bytes GeterMsg = 2;
+    string types = 3;
+    string datatime = 4;
+    bool mymessage = 5;
+    int64 idmsg = 6;
+    bool readed = 7;
+}
+
+
+
+message  GetMsgStreamRequest {
+    string Login = 1;
+    string Password = 2;
+    string RecipientLogin = 3;
+}
+
+message  GetMsgStreamResponse {
+    int32 errorcode = 1;
+    bytes GeterMsg = 2;
+    string types = 3;
+    string datatime = 4;
+    bool mymessage = 5;
+    int64 idmsg = 6;
+    bool readed = 7;
+}
+
+// message Timestamp 
+
+//     int64 seconds = 1;
+//     int32 nanos = 2;
+//   }
+
+message  GetMsgRequest {
+    string Login = 1;
+    string Password = 2;
+    string RecipientLogin= 3;
+}
+
+message  GetMsgResponse {
+    int32 errorcode = 1;
+    bytes GeterMsg = 2;
+    string types = 3;
+    string datatime = 4;
+}
+
+
+message SendMsgRequest {
+    string Login = 1;
+    string Password   = 2;
+    string RecipientLogin = 3;
+    bytes SenderMsg = 4;
+    bytes RecipientMsg = 5;
+    string Typemsg = 6;
+}
+
+message SendMsgResponse {
+    int32 errorcode = 1;
+}
+
+message ChatListRequest {
+    string Login = 1;
+    string Password   = 2;
+}
+
+message ChatListResponse {
+    string Chatunit = 1;
+}
+
+//Фио паль логин емаил 
+message RegistrationRequest {
+    string surname = 1;
+    string name = 2;
+    string middle_name = 3;
+    string password = 4;
+    string login = 5;
+    string email = 6;
+    int32 confirmcode = 7;
+    string publickey = 8;
+}
+
+message SeccessfullResponse {
+    int32 errorcode = 1;
+}
+message LoginConnectResponse {
+    int32 errorcode = 1;
+}
+message EmailConfirmationRequest {
+    string email = 1;
+}
+message EmailConfirmationResponse {
+    int32 errorcode = 1;
+}
+
+message NuzhniiRequest {
+    string message = 1;
+    string number   = 2;
+}
+
+message NuzhniiResponse {
+    string message = 1;
+}
+
+message LoginRequest {
+    string Login = 1;
+    string Password   = 2;
+}
+
+message LoginConnectRequest {
+    string Login = 1;
+    string Password   = 2;
+}
+
+message LoginResponse {
+    bool entered = 1;
+    string email = 2;
+    string phone = 3;
+    string info = 4;
+    string surname = 5;
+    string name = 6;
+    string middle_name = 7;
+}

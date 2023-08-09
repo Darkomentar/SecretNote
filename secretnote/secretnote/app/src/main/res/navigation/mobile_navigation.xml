@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.secretnote.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_sendMessage2"
+            app:destination="@id/sendMessage2" />
+        <action
+            android:id="@+id/action_nav_home_to_sendMessageGroup"
+            app:destination="@id/sendMessageGroup" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.secretnote.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_nav_gallery_to_sendMessage2"
+            app:destination="@id/sendMessage2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.secretnote.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" >
+        <action
+            android:id="@+id/action_nav_slideshow_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendMessage2"
+        android:name="com.example.secretnote.SendMessage"
+        android:label="fragment_send_message"
+        tools:layout="@layout/fragment_send_message" >
+        <action
+            android:id="@+id/action_sendMessage2_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendMessageGroup"
+        android:name="com.example.secretnote.SendMessageGroup"
+        android:label="fragment_send_message_group"
+        tools:layout="@layout/fragment_send_message_group" >
+        <action
+            android:id="@+id/action_sendMessageGroup_to_addUserGroupChat"
+            app:destination="@id/addUserGroupChat" />
+        <action
+            android:id="@+id/action_sendMessageGroup_to_attendees2"
+            app:destination="@id/attendees2" />
+        <action
+            android:id="@+id/action_sendMessageGroup_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/importExportPrivateKey"
+        android:name="com.example.secretnote.ImportExportPrivateKey"
+        android:label="IMPORT EXPORT PRIVATE KEY"
+        tools:layout="@layout/fragment_import_export_private_key" />
+    <fragment
+        android:id="@+id/addUserGroupChat"
+        android:name="com.example.secretnote.AddUserGroupChat"
+        android:label="fragment_add_user_group_chat"
+        tools:layout="@layout/fragment_add_user_group_chat" />
+    <fragment
+        android:id="@+id/attendees2"
+        android:name="com.example.secretnote.Attendees"
+        android:label="fragment_attendees"
+        tools:layout="@layout/fragment_attendees" />
+    <fragment
+        android:id="@+id/protectionAccess"
+        android:name="com.example.secretnote.ProtectionAccess"
+        android:label="PROTECTION ACCESS"
+        tools:layout="@layout/fragment_protection_access" />
+</navigation>

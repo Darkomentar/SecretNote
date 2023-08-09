@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#0037B3B3"
+    android:orientation="horizontal"
+    android:forceDarkAllowed="false"
+    android:padding="2dp">
+
+    <TextView
+        android:id="@+id/textViewLoginsSearch"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:alpha="1"
+        android:background="@drawable/logins_serach_text_round"
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:textSize="14sp" />
+</LinearLayout>

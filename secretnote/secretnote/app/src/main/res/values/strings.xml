@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SecretNote</string>
+    <string name="nav_header_title">  </string>
+    <string name="nav_header_subtitle"> </string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Exit</string>
+    <string name="action_add_user">Add user</string>
+    <string name="menu_home">CHATS</string>
+    <string name="menu_gallery">NEW  PRIVATE CHAT</string>
+    <string name="menu_slideshow">NEW PRIVATE GROUP CHAT</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="message">Message</string>
+    <string name="new_private_chat">NEW PRIVATE CHAT</string>
+    <string name="import_export_private_key">I/E PRIVATE KEY</string>
+    <string name="attendees">Attendees</string>
+</resources>

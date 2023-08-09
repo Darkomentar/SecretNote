@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_add_user_group_chat"
+        android:orderInCategory="101"
+        android:title="@string/action_add_user"
+        android:visible="false"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/attendees"
+        android:orderInCategory="102"
+        android:title="@string/attendees"
+        android:visible="false"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/exiting_the_chat"
+        android:orderInCategory="103"
+        android:title="Exiting the chat"
+        android:visible="false"
+        app:showAsAction="never" />
+</menu>
